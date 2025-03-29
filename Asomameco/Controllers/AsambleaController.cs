@@ -240,7 +240,9 @@ namespace Asomameco.Web.Controllers
                     string urlConfirmacion = $"https://localhost:7282/Asamblea/Confirmar?id={usuario.Id}&idAsamblea={dto.Id}";
                     string mensaje = $@"
             <h2>Notificación de Asamblea</h2>
-            <p>Se ha programado una nueva asamblea para el <strong>{dto.Fecha.ToShortDateString()}</strong> a las <strong>{dto.Fecha.Hour}</strong>:<strong>{dto.Fecha.Minute}</strong>.</p>
+            <p>Se ha programado una nueva asamblea para el <strong>{dto.Fecha.ToShortDateString()}
+            </strong> a las <strong>{dto.Fecha.Hour}</strong>:<strong>{dto.Fecha.Minute}</strong>.</p>
+            <p><strong>{dto.Descripcion}</strong></p>
             <p>Por favor, confirma tu asistencia haciendo clic en el botón de abajo:</p>
             <a href='{urlConfirmacion}' 
                style='background-color: #28a745; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px;'>
@@ -420,7 +422,9 @@ namespace Asomameco.Web.Controllers
                     string urlConfirmacion = $"https://localhost:7282/Asamblea/Confirmar?id={usuario.Id}&idAsamblea={dto.Id}";
                     string mensaje = $@"
             <h2>Notificación de Asamblea</h2>
-            <p>Se ha realizado una modificación de una asamblea para el <strong>{dto.Fecha.ToShortDateString()}</strong> a las <strong>{dto.Fecha.Hour}</strong>:<strong>{dto.Fecha.Minute}</strong>.</p>
+            <p>Se ha realizado una modificación de una asamblea para el <strong>{dto.Fecha.ToShortDateString()}
+            </strong> a las <strong>{dto.Fecha.Hour}</strong>:<strong>{dto.Fecha.Minute}</strong>.</p>
+            <p><strong>{dto.Descripcion}</strong></p>
             <p>Por favor, confirma tu asistencia haciendo clic en el botón de abajo:</p>
             <a href='{urlConfirmacion}' 
                style='background-color: #28a745; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px;'>

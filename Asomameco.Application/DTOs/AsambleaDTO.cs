@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,9 @@ namespace Asomameco.Application.DTOs
                 };
             }
         }
+
+        [Display(Name = "Descripcion")]
+        public string Descripcion { get; set; } = null!;
 
         [ValidateNever]
         public virtual ICollection<Asistencia> Asistencia { get; set; } = new List<Asistencia>();

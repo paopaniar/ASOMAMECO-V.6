@@ -14,4 +14,6 @@ public partial class Asamblea
     public virtual ICollection<Asistencia> Asistencia { get; set; } = new List<Asistencia>();
 
     public virtual EstadoAsamblea EstadoNavigation { get; set; } = null!;
+
+    public string Descripcion { get; set; } = null!;
 }

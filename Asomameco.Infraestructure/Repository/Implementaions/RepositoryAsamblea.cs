@@ -51,16 +51,17 @@ namespace Asomameco.Infraestructure.Repository.Implementations
 
             // Insertar el nuevo Asamblea en la tabla Asamblea usando SQL
             var sqlAsamblea = @"
-        INSERT INTO Asamblea (Id, Fecha,Estado) 
-        VALUES (@Id, @Fecha, @Estado);";
+        INSERT INTO Asamblea (Id, Fecha,Estado, Descripcion) 
+        VALUES (@Id, @Fecha, @Estado, @Descripcion);";
 
             // Parámetros para la consulta SQL del Asamblea
             var parametersAsamblea = new[]
             {
         new SqlParameter("@Id", entity.Id),
         new SqlParameter("@Fecha", entity.Fecha),
-        new SqlParameter("@Estado", entity.Estado)
- 
+        new SqlParameter("@Estado", entity.Estado),
+        new SqlParameter("@Descripcion", entity.Descripcion)
+
     };
 
             // Ejecutar la consulta y obtener el Id del Asamblea recién insertado
@@ -143,7 +144,8 @@ namespace Asomameco.Infraestructure.Repository.Implementations
         UPDATE Asamblea 
         SET 
             Fecha = @Fecha, 
-            Estado = @Estado 
+            Estado = @Estado,
+            Descripcion = @Descripcion
      
         WHERE Id = @Id;";
 
@@ -153,8 +155,9 @@ namespace Asomameco.Infraestructure.Repository.Implementations
             {
         new SqlParameter("@Id", entity.Id),
         new SqlParameter("@Fecha", entity.Fecha),
-        new SqlParameter("@Estado", entity.Estado)
- 
+        new SqlParameter("@Estado", entity.Estado),
+        new SqlParameter("@Descripcion", entity.Descripcion)
+
     };
 
             var sql2 = "DELETE FROM Confirmacion WHERE IdAsamblea = @Id";

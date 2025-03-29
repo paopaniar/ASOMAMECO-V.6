@@ -31,6 +31,15 @@
                             <input type="datetime-local" asp-for="Fecha" id="Fecha" class="form-control" style="max-width: 90%;" />
                             <span asp-validation-for="Fecha" class="text-danger"></span>
                         </div>
+
+                        <!-- Campo Descripcion -->
+                        <div class="mb-3">
+                            <label asp-for="Descripcion" class="form-label fw-bold">
+                                <i class="fas fa-user me-2"></i>Descripci&oacute;n
+                            </label>
+                            <input asp-for="Descripcion" id="Descripcion" class="form-control" placeholder="Ingrese una descripci&oacute;n" style="max-width: 90%;" />
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
  
 
            
