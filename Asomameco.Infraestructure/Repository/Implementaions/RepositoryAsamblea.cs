@@ -25,7 +25,8 @@ namespace Asomameco.Infraestructure.Repository.Implementations
         {
 
             var @object = await _context.Set<Asamblea>()
-             .Include(p => p.EstadoNavigation) // Incluye el tipo de Asamblea   
+             .Include(p => p.EstadoNavigation)// Incluye el tipo de Asamblea  
+             .Include(p => p.LugarNavigation)// Incluye el Lugar   
             .Where(p => p.Id == id)
             .FirstOrDefaultAsync();
 
@@ -36,6 +37,7 @@ namespace Asomameco.Infraestructure.Repository.Implementations
         {
             var collection = await _context.Set<Asamblea>()
                 .Include(p => p.EstadoNavigation) // Incluye el tipo de Asamblea
+                .Include(p => p.LugarNavigation)// Incluye el Lugar   
                 .ToListAsync();
             return collection;
         }
@@ -45,14 +47,11 @@ namespace Asomameco.Infraestructure.Repository.Implementations
 
         public async Task<int> AddAsync(Asamblea entity)
         {
- 
- 
-          
 
             // Insertar el nuevo Asamblea en la tabla Asamblea usando SQL
             var sqlAsamblea = @"
-        INSERT INTO Asamblea (Id, Fecha,Estado, Descripcion) 
-        VALUES (@Id, @Fecha, @Estado, @Descripcion);";
+                    INSERT INTO Asamblea (Id, Fecha,Estado, Descripcion, Lugar) 
+                    VALUES (@Id, @Fecha, @Estado, @Descripcion, @Lugar);";
 
             // Parámetros para la consulta SQL del Asamblea
             var parametersAsamblea = new[]
@@ -60,7 +59,8 @@ namespace Asomameco.Infraestructure.Repository.Implementations
         new SqlParameter("@Id", entity.Id),
         new SqlParameter("@Fecha", entity.Fecha),
         new SqlParameter("@Estado", entity.Estado),
-        new SqlParameter("@Descripcion", entity.Descripcion)
+        new SqlParameter("@Descripcion", entity.Descripcion),
+        new SqlParameter("@Lugar", entity.Lugar)
 
     };
 
@@ -121,11 +121,11 @@ namespace Asomameco.Infraestructure.Repository.Implementations
             // Parámetros para la consulta SQL del Asamblea
             var parametersConfirmacion = new[]
             {
-        new SqlParameter("@Id", newId),
-        new SqlParameter("@FechaConfirmacion", entity.FechaConfirmacion),
+            new SqlParameter("@Id", newId),
+            new SqlParameter("@FechaConfirmacion", entity.FechaConfirmacion),
             new SqlParameter("@IdMiembro", entity.IdMiembro),
-               new SqlParameter("@Metodo", entity.Metodo),
-        new SqlParameter("@IdAsamblea", entity.IdAsamblea)
+            new SqlParameter("@Metodo", entity.Metodo),
+            new SqlParameter("@IdAsamblea", entity.IdAsamblea)
 
     };
 
@@ -145,7 +145,8 @@ namespace Asomameco.Infraestructure.Repository.Implementations
         SET 
             Fecha = @Fecha, 
             Estado = @Estado,
-            Descripcion = @Descripcion
+            Descripcion = @Descripcion,
+            Lugar = @Lugar
      
         WHERE Id = @Id;";
 
@@ -156,7 +157,8 @@ namespace Asomameco.Infraestructure.Repository.Implementations
         new SqlParameter("@Id", entity.Id),
         new SqlParameter("@Fecha", entity.Fecha),
         new SqlParameter("@Estado", entity.Estado),
-        new SqlParameter("@Descripcion", entity.Descripcion)
+        new SqlParameter("@Descripcion", entity.Descripcion),
+        new SqlParameter("@Lugar", entity.Lugar)
 
     };
 

@@ -34,10 +34,17 @@ namespace Asomameco.Application.DTOs
         [Display(Name = "Descripcion")]
         public string Descripcion { get; set; } = null!;
 
+        public int Lugar { get; set; }
+
         [ValidateNever]
         public virtual ICollection<Asistencia> Asistencia { get; set; } = new List<Asistencia>();
         [ValidateNever]
         public virtual EstadoAsambleaDTO EstadoNavigation { get; set; } = null!;
+        [ValidateNever]
+        public virtual LugarDTO LugarNavigation { get; set; } = null!;
+
+
+
 
     }
 }

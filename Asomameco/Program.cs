@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Serilog;
 using Serilog.Events;
 using Asomameco.Web.Middleware;
+using Asomameco.Infraestructure.Repository.Implementaions;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -48,7 +49,7 @@ builder.Services.AddTransient<IRepositoryEstadoAsamblea, RepositoryEstadoAsamble
 builder.Services.AddTransient<IRepositoryMetodoConfirmacion, RepositoryMetodoConfirmacion>();
 builder.Services.AddTransient<IRepositoryUsuario, RepositoryUsuario>();
 builder.Services.AddTransient<IRepositoryTipoUsuario, RepositoryTipoUsuario>();
-
+builder.Services.AddTransient<IRepositoryLugar, RepositoryLugar>();
 // Services 
 
 //builder.Services.AddTransient<ServiceEmail>();
@@ -62,6 +63,7 @@ builder.Services.AddTransient<IServiceEstadoAsamblea, ServiceEstadoAsamblea>();
 builder.Services.AddTransient<IServiceMetodoConfirmacion, ServiceMetodoConfirmacion>();
 builder.Services.AddTransient<IServiceUsuario, ServiceUsuario>();
 builder.Services.AddTransient<IServiceTipoUsuario, ServiceTipoUsuario>();
+builder.Services.AddTransient<IServiceLugar, ServiceLugar>();
 builder.Services.AddTransient<EmailService>();
 builder.Services.AddTransient<QrService>();
 builder.Services.AddHostedService<RecordatorioService>();
@@ -79,7 +81,7 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile<MetodoConfirmacionProfile>();
     config.AddProfile<TipoUsuarioProfile>();
     config.AddProfile<UsuarioProfile>();
-
+    config.AddProfile<LugarProfile>();
 });
 
 

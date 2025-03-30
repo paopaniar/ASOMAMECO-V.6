@@ -30,6 +30,8 @@ public partial class AsomamecoContext : DbContext
 
     public virtual DbSet<Usuario> Usuario { get; set; }
 
+    public virtual DbSet<Lugar> Lugar { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Asamblea>(entity =>
@@ -41,6 +43,11 @@ public partial class AsomamecoContext : DbContext
                 .HasForeignKey(d => d.Estado)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Asamblea_EstadoAsamblea");
+
+            entity.HasOne(d => d.LugarNavigation).WithMany(p => p.Asamblea)
+               .HasForeignKey(d => d.Lugar)
+               .OnDelete(DeleteBehavior.ClientSetNull)
+               .HasConstraintName("FK_Asamblea_Lugar");
         });
 
         modelBuilder.Entity<Asistencia>(entity =>
@@ -118,6 +125,10 @@ public partial class AsomamecoContext : DbContext
                 .HasForeignKey(d => d.Tipo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Usuario_TipoUsuario");
+        });
+        modelBuilder.Entity<Lugar>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
         });
 
         OnModelCreatingPartial(modelBuilder);

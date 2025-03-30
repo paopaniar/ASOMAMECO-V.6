@@ -115,6 +115,8 @@
                 <th>Id</th>
                 <th>Fecha </th>
                 <th>Estado</th>
+                <th>Descripcion</th>
+                <th>Lugar</th>
         
             </tr>
         </thead>
@@ -125,7 +127,8 @@
                     <td>@asam.Id</td>
                     <td>@asam.Fecha</td>
                     <td>@asam.EstadoDescripcion</td>
-      
+                    <td>@asam.Descripcion</td>
+                    <td>@(asam.LugarNavigation?.NombreLugar ?? "No especificado")</td>
                     <td>
                         <a href="@Url.Action("Edit", "Asamblea", new { id = asam.Id })" class="btn btn-warningcustom">
                             <i class="fas fa-edit"></i> Editar
