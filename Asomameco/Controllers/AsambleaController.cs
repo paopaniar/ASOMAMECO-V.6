@@ -193,12 +193,6 @@ namespace Asomameco.Web.Controllers
         }
 
 
-
-
-
-
-
-
         [Authorize]
         // POST: AsambleaController/Create
         [HttpPost]

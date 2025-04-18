@@ -4,7 +4,7 @@ using Asomameco.Application.DTOs;
 using Asomameco.Infraestructure.Repository.Interfaces;
 using AutoMapper;
 
-namespace ASOMAMECOUsuarioExistente
+namespace AsomamecoTest.Unitaria
 {
     public class UsuarioExistenteTest
     {
