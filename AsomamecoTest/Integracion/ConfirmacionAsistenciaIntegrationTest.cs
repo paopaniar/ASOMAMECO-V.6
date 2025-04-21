@@ -24,7 +24,7 @@ namespace ASOMAMECO.Test.Integration
             var usuario = new Usuario
             {
                 Id = usuarioId,
-                Nombre = "UsuarioTest",
+                Nombre = "UsuarioTest2",
                 Apellidos = "Prueba",
                 Cedula = "111111111",
                 Correo = "confirmacion_test@example.com",
