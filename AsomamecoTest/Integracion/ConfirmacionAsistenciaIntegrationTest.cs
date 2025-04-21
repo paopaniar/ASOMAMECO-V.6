@@ -25,7 +25,7 @@ namespace ASOMAMECO.Test.Integration
             {
                 Id = usuarioId,
                 Nombre = "UsuarioTest2",
-                Apellidos = "Prueba",
+                Apellidos = "Prueba2",
                 Cedula = "111111111",
                 Correo = "confirmacion_test@example.com",
                 Contraseña = "test123",
