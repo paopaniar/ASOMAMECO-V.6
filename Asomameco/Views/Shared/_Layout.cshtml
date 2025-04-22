@@ -36,32 +36,33 @@
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contacto">Contacto</a></li>
 
 
-                          @if (Context.Session.GetString("UserType") == "1")
-                        { 
+                        @if (Context.Session.GetString("UserType") == "1")
+                        {
                             <li class="nav-item dropdown">
                                 <a style="text-decoration:none;color:white;" class="nav-link dropdown-toggle" href="#" id="mantenimientosDropdown" role="button">Mantenimientos</a>
                                 <ul class="dropdown-menu" aria-labelledby="mantenimientosDropdown">
                                     <li><a class="dropdown-item" asp-controller="Asamblea" asp-action="IndexAdmin">Asamblea</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Lugar" asp-action="IndexAdmin">Lugar</a></li>
                                     <li><a class="dropdown-item" asp-controller="Usuario" asp-action="IndexAdmin">Usuario</a></li>
                                 </ul>
                             </li>
-                        <li class="nav-item dropdown">
-                            <a style="text-decoration:none;color:white;" class="nav-link dropdown-toggle" href="#" id="mantenimientosDropdown" role="button">Administración</a>
-                            <ul class="dropdown-menu" aria-labelledby="mantenimientosDropdown">
-                                <li><a class="dropdown-item" asp-controller="Asamblea" asp-action="ListaConfirmacion">Confirmaciones de Asistencia</a></li>
+                            <li class="nav-item dropdown">
+                                <a style="text-decoration:none;color:white;" class="nav-link dropdown-toggle" href="#" id="mantenimientosDropdown" role="button">Administración</a>
+                                <ul class="dropdown-menu" aria-labelledby="mantenimientosDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Asamblea" asp-action="ListaConfirmacion">Confirmaciones de Asistencia</a></li>
                                     <li><a class="dropdown-item" asp-controller="Asamblea" asp-action="RegistroAsistencia">Registro de Asistencia</a></li>
-                    
+
                                     <li><a class="dropdown-item" asp-controller="Asamblea" asp-action="Analitica">Analítica y reportería</a></li>
-                            </ul>
-                        </li>
-                      }
+                                </ul>
+                            </li>
+                        }
 
                         @if (string.IsNullOrEmpty(Context.Session.GetString("UserName")))
-                { 
-                        <li class="nav-item">
-                            <a class="nav-link btn custom-login-btn ms-2" asp-area="" asp-controller="Account" asp-action="Login">
-                                <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
-                            </a>
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link btn custom-login-btn ms-2" asp-area="" asp-controller="Account" asp-action="Login">
+                                    <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
+                                </a>
                             </li>
                         }
                         else
@@ -75,8 +76,8 @@
                                 </form>
                             </li>
 
-                        
-                  }
+
+                        }
 
                     </ul>
                 </div>
@@ -110,4 +111,6 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+
 }
