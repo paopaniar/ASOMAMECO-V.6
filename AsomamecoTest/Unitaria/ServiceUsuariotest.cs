@@ -5,7 +5,7 @@ using Moq;
 using Asomameco.Application.Services.Interfaces;
 using Asomameco.Application.DTOs;
 
-namespace PruebaUsuarioASOMAMECO
+namespace AsomamecoTest.Unitaria
 {
     public class ServicioUsuarioPruebas
     {

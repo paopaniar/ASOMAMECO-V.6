@@ -224,12 +224,6 @@ namespace Asomameco.Web.Controllers
         }
 
 
-
-
-
-
-
-
         [Authorize]
         [HttpPost]
         public async Task<ActionResult> Create(AsambleaDTO dto, List<string> selectedUsers)
