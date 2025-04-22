@@ -31,7 +31,7 @@ namespace ASOMAMECO.Test.Integration
                 Contraseña = "test123",
                 Estado1 = 1,
                 Estado2 = 1,
-                Telefono = 12345678,
+                Telefono = 123456789,
                 Tipo = 1
             };
 
