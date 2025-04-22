@@ -11,5 +11,8 @@ namespace Asomameco.Application.Services.Interfaces
     {
         Task<ICollection<LugarDTO>> ListAsync();
         Task<LugarDTO> FindByIdAsync(int id);
+        Task<int> AddAsync(LugarDTO dto);
+        Task UpdateAsync(int id, LugarDTO dto);
+        Task DeleteAsync(int id, LugarDTO dto);
     }
 }

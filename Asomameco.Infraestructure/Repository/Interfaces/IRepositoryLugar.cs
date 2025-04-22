@@ -11,5 +11,8 @@ namespace Asomameco.Infraestructure.Repository.Interfaces
     {
         Task<ICollection<Lugar>> ListAsync();
         Task<Lugar> FindByIdAsync(int id);
+        Task<int> AddAsync(Lugar dto);
+        Task UpdateAsync(int id, Lugar dto);
+        Task DeleteAsync(int id, Lugar dto);
     }
 }
