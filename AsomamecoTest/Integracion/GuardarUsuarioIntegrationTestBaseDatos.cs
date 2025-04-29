@@ -41,7 +41,7 @@ namespace ASOMAMECO.Test.Integration
                 {
                     // Si Id es configurado manualmente (ValueGeneratedNever()), asegúrate de que sea único
                     Id = 9999,
-                    Nombre = "Juan",
+                    Nombre = "Juanxxx",
                     Apellidos = "Pérez",
                     Cedula = "123456789",
                     Correo = "juan@example.com",
